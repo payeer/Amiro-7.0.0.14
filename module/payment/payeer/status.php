@@ -128,11 +128,16 @@ class Payeer_Callback
 						switch ($request['m_status'])
 						{
 							case 'success':
-								$qupdate = $oDB->fetchValue(DB_Query::getUpdateQuery(
-									'cms_es_orders',
-									array('status'  => 'confirmed_done'),
-									DB_Query::getSnippet('WHERE id IN (%s)')->q($request['m_orderid'])
-								));
+							
+								if ($order['status'] != 'confirmed_done')
+								{
+									$qupdate = $oDB->fetchValue(DB_Query::getUpdateQuery(
+										'cms_es_orders',
+										array('status'  => 'confirmed_done'),
+										DB_Query::getSnippet('WHERE id IN (%s)')->q($request['m_orderid'])
+									));
+								}
+								
 								return $request['m_orderid'] . '|success';
 								break;
 								
