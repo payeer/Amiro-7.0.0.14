@@ -1,7 +1,5 @@
 <?php
-
-if (isset($_GET['m_orderid'])) 
-{
+if (isset($_GET['m_orderid'])) {
 	$order_id = preg_replace('/[^a-zA-Z0-9_-]/', '', substr($_GET['m_orderid'], 0, 32));
 	ob_end_clean();
 	header('Expires: Mon, 26 Jul 1997 05:00:00 GMT');
@@ -11,5 +9,4 @@ if (isset($_GET['m_orderid']))
 	header('Location: ' . $_SERVER['HOST'] . '/members/order?action=process&status=fail&item_number=' . $order_id, true, 301);
 	die;
 }
-
 ?>
