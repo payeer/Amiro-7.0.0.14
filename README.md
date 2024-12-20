@@ -1,8 +1,8 @@
 Amiro
 ======
-Модуль оплаты Payeer
+Payment module Payeer
 
-Для установки модуля скачайте и распакуйте архив.
-Далее следуйте прилагаемой инструкции
+To install the module, download and unzip the archive.
+Then follow the attached instructions.
 
-Поддержка версии CMS Amiro 7.0.0.14
+Support for CMS Amiro 7.0.0.14
